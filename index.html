@@ -22,20 +22,20 @@
       <div class="row">
 
         <section id="user_data" class="col-12">
-          <h1 class="display-1 text-uppercase">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+          <h1 class="display-2 text-uppercase text-white fw-semibold">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
 
-          <div class="card">
+          <div class="card rounded-4">
             <div class="card-body">
 
               <div id="inputs" class="container-fluid">
-                <div class="row row-cols-1 row-cols-md-3">
+                <div class="row row-cols-1 row-cols-xl-3">
                   <div class="col">
                     <label for="name_surname">Nome e Cognome</label>
                     <input class="w-100" id="name_surname" type="text" placeholder="Nome e Cognome">
                   </div>
                   <!-- /.col -->
 
-                  <div class="col my-4 my-md-0">
+                  <div class="col my-4 my-xl-0">
                     <label for="km">Km da percorrere</label>
                     <input class="w-100" id="km" type="number" name="km" placeholder="Km da percorrere">
                   </div>
@@ -57,7 +57,7 @@
               <!-- /#inputs -->
 
               <div id="buttons" class="my-4">
-                <button id="generate" class="btn btn-primary mx-2">Genera</button>
+                <button id="generate" class="btn mx-2 text-white">Genera</button>
                 <button id="reset" class="btn btn-secondary mx-2">Reset</button>
               </div>
               <!-- /#buttons -->
@@ -72,46 +72,46 @@
 
         <!-- TODO add d-none after coding session -->
         <section id="ticket_preview" class="col-12">
-          <h1 class="display-1 text-uppercase">IL TUO BIGLIETTO</h1>
-          <div class="card">
+          <h1 class="display-2 text-uppercase text-white fw-semibold">IL TUO BIGLIETTO</h1>
+          <div class="card rounded-4">
             <div class="card-body">
-              <h3 class="display-6 text-uppercase text-start">DETTAGLIO PASSEGGERI</h3>
+              <h3 class="display-6 text-uppercase text-xl-start">DETTAGLIO PASSEGGERI</h3>
 
               <div class="container-fluid">
-                <div class="row row-cols-1 row-cols-md-6">
+                <div class="row row-cols-1 row-cols-xl-6">
 
                   <div class="col">
-                    <h5 class="text-uppercase">NOME PASSEGGERO</h5>
+                    <h6 class="text-uppercase">PASSEGGERO</h6>
                     <h6 id="ticket_preview_passenger_name"></h6>
                   </div>
                   <!-- /.col -->
 
                   <div class="col">
-                    <h5>Offerta</h5>
+                    <h6>Offerta</h6>
                     <h6 id="ticket_preview_offer_type"></h6>
                   </div>
                   <!-- /.col -->
 
                   <div class="col">
-                    <h5>Km max</h5>
+                    <h6>Km max</h6>
                     <h6 id="ticket_preview_kms"></h6>
                   </div>
                   <!-- /.col -->
 
                   <div class="col">
-                    <h5>Carrozza</h5>
+                    <h6>Carrozza</h6>
                     <h6 id="ticket_preview_train_carriage"></h6>
                   </div>
                   <!-- /.col -->
 
                   <div class="col">
-                    <h5>Codice CP</h5>
+                    <h6>Codice CP</h6>
                     <h6 id="ticket_preview_cp_code"></h6>
                   </div>
                   <!-- /.col -->
 
                   <div class="col">
-                    <h5>Costo biglietto</h5>
+                    <h6>Costo biglietto</h6>
                     <h6 id="ticket_preview_ticket_cost"></h6>
                   </div>
                   <!-- /.col -->

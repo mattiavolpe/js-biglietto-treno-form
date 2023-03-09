@@ -21,26 +21,25 @@ TOOLS
 
 const generateBtn = document.getElementById("generate");
 const resetBtn = document.getElementById("reset");
+const userName = document.getElementById("name_surname");
+const km = document.getElementById("km");
+const age = document.getElementById("age");
 const ticketPreviewEl = document.getElementById("ticket_preview");
 
 // GENERATE FUNCTION
 generateBtn.addEventListener('click', function() {
-  const userName = document.getElementById("name_surname");
-  const km = Number(document.getElementById("km").value);
-  const age = document.getElementById("age").value;
-
   // CHECK IF EVERY INPUT IS FILLED
-  if (userName == "" || km == 0) {
+  if (userName == "" || Number(km.value) == 0) {
     alert("ERRORE. Tutti i campi devono essere compilati");
     return;
   }
 
   const costPerKm = 0.21;
-  let finalPrice = km * costPerKm;
+  let finalPrice = Number(km.value) * costPerKm;
 
   document.getElementById("ticket_preview_offer_type").innerText = "Biglietto Standard";
 
-  switch (age) {
+  switch (age.value) {
     case "minorenne":
       finalPrice *= 0.8;
       document.getElementById("ticket_preview_offer_type").innerText = "Biglietto Under 18";
@@ -52,7 +51,7 @@ generateBtn.addEventListener('click', function() {
   }
 
   document.getElementById("ticket_preview_passenger_name").innerText = userName.value;
-  document.getElementById("ticket_preview_kms").innerText = km;
+  document.getElementById("ticket_preview_kms").innerText = km.value;
 
   // MAX 20 TRAIN CARRIAGE
   document.getElementById("ticket_preview_train_carriage").innerText = Math.floor(Math.random() * 20) + 1;
@@ -64,13 +63,17 @@ generateBtn.addEventListener('click', function() {
 
   // SHOWS THE TICKET PREVIEW BY REMOVING BOOTSTRAP CLASS D-NONE
   ticketPreviewEl.classList.remove("d-none");
-})
 
+  // RESETS THE FORM ALSO ON GENERATE
+  userName.value = "";
+  km.value = "";
+  age.value = "maggiorenne";
+})
 
 // RESET FUNCTION
 resetBtn.addEventListener('click', function() {
   ticketPreviewEl.classList.add("d-none");
-  document.getElementById("name_surname").value = "";
+  userName.value = "";
   km.value = "";
   age.value = "maggiorenne";
 })
