@@ -22,7 +22,7 @@ TOOLS
 const generateBtn = document.getElementById("generate");
 
 generateBtn.addEventListener('click', function() {
-  const km = Number(document.querySelector('[type="number"]').value);
+  const km = Number(document.getElementById("km").value);
   const age = document.getElementById("age").value;
   const costPerKm = 0.21;
   let finalPrice = km * costPerKm;

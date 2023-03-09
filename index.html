@@ -18,15 +18,66 @@
   <body>
 
     <div class="container text-center">
-      <input type="text" placeholder="Nome e Cognome">
-      <input type="number" name="km" placeholder="Km da percorrere">
-      <select name="age" id="age">
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="minorenne">Minorenne</option>
-        <option value="over65">Over 65</option>
-      </select>
-      <button id="generate">Genera</button>
-      <button id="reset">Reset</button>
+
+      <div class="row">
+
+        <section id="user_data" class="col-12">
+          <h1 class="display-1 text-uppercase">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
+          <div class="card">
+            <div class="card-body">
+
+              <div id="inputs" class="container-fluid">
+                <div class="row">
+                  <div class="col-12 col-md-4">
+                    <label for="name_surname">Nome e Cognome</label>
+                    <input class="w-100" id="name_surname" type="text" placeholder="Nome e Cognome">
+                  </div>
+                  <!-- /.col-4 col-md-4 -->
+
+                  <div class="col-12 col-md-4 my-4 my-md-0">
+                    <label for="km">Km da percorrere</label>
+                    <input class="w-100" id="km" type="number" name="km" placeholder="Km da percorrere">
+                  </div>
+                  <!-- /.col-4 col-md-4 -->
+
+                  <div class="col-12 col-md-4">
+                    <label for="age">Fascia di et&agrave;</label>
+                    <select class="w-100" name="age" id="age">
+                      <option value="maggiorenne">Maggiorenne</option>
+                      <option value="minorenne">Minorenne</option>
+                      <option value="over65">Over 65</option>
+                    </select>
+                  </div>
+                  <!-- /.col-4 col-md-4 -->
+                  
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /#inputs -->
+
+              <div id="buttons" class="my-4">
+                <button id="generate" class="btn btn-primary mx-2">Genera</button>
+                <button id="reset" class="btn btn-secondary mx-2">Reset</button>
+              </div>
+              <!-- /#buttons -->
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </section>
+        <!-- /#user_data -->
+
+        <section id="ticket_preview" class="col-12">
+          <h1 class="display-1 text-uppercase">IL TUO BIGLIETTO</h1>
+        </section>
+        <!-- /#ticket_preview -->
+
+      </div>
+      <!-- /.row -->
+      
     </div>
     <!-- /.container -->
 
