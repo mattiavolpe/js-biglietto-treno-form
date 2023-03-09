@@ -13,9 +13,30 @@ va applicato uno sconto del 40% per gli over 65.
 TOOLS
 - value
 - switch / case
-- querySelector
+- querySelector / getElementById
 - addEventListener
 - fuction()
 - classList
 */
 
+const generateBtn = document.getElementById("generate");
+
+generateBtn.addEventListener('click', function() {
+  const km = Number(document.querySelector('[type="number"]').value);
+  const age = document.getElementById("age").value;
+  const costPerKm = 0.21;
+  let finalPrice = km * costPerKm;
+
+  switch (age) {
+    case "minorenne":
+      finalPrice *= 0.8;
+      console.log(`Prezzo minorenne: ${(Math.round(finalPrice * 100) / 100).toFixed(2)}€`);
+      break;
+    case "over65":
+      finalPrice *= 0.6;
+      console.log(`Prezzo over 65: ${(Math.round(finalPrice * 100) / 100).toFixed(2)}€`);
+      break;
+    default:
+      console.log(`Prezzo maggiorenne: ${(Math.round(finalPrice * 100) / 100).toFixed(2)}€`);
+  }
+})
