@@ -30,7 +30,7 @@ const ticketPreviewEl = document.getElementById("ticket_preview");
 generateBtn.addEventListener('click', function() {
   // CHECK IF EVERY INPUT IS FILLED
   if (userName == "" || Number(km.value) == 0) {
-    alert("ERRORE. Tutti i campi devono essere compilati");
+    alert("ERRORE. Tutti i campi devono essere compilati correttamente");
     return;
   }
 
