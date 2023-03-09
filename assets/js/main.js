@@ -38,30 +38,29 @@ generateBtn.addEventListener('click', function() {
   const costPerKm = 0.21;
   let finalPrice = km * costPerKm;
 
-  document.getElementById("table_offer_type").innerText = "Biglietto Standard";
+  document.getElementById("ticket_preview_offer_type").innerText = "Biglietto Standard";
 
   switch (age) {
     case "minorenne":
       finalPrice *= 0.8;
-      document.getElementById("table_offer_type").innerText = "Biglietto Under 18";
+      document.getElementById("ticket_preview_offer_type").innerText = "Biglietto Under 18";
       break;
     case "over65":
       finalPrice *= 0.6;
-      document.getElementById("table_offer_type").innerText = "Biglietto Over 65";
+      document.getElementById("ticket_preview_offer_type").innerText = "Biglietto Over 65";
       break;
   }
 
-  document.getElementById("table_passenger_name").innerText = userName.value;
-  document.getElementById("table_kms").innerText = km;
+  document.getElementById("ticket_preview_passenger_name").innerText = userName.value;
+  document.getElementById("ticket_preview_kms").innerText = km;
 
   // MAX 20 TRAIN CARRIAGE
-  document.getElementById("table_train_carriage").innerText = Math.floor(Math.random() * 20) + 1;
+  document.getElementById("ticket_preview_train_carriage").innerText = Math.floor(Math.random() * 20) + 1;
 
   // 5 DIGITS INTEGER NUMBER NEVER STARTING WITH 0
-  document.getElementById("table_cp_code").innerText = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
+  document.getElementById("ticket_preview_cp_code").innerText = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
 
-  document.getElementById("table_ticket_cost").innerText = `${finalPrice}€`;
-
+  document.getElementById("ticket_preview_ticket_cost").innerText = `${(Math.round(finalPrice * 100) / 100).toFixed(2)}€`;
 
   // SHOWS THE TICKET PREVIEW BY REMOVING BOOTSTRAP CLASS D-NONE
   ticketPreviewEl.classList.remove("d-none");
