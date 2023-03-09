@@ -20,7 +20,10 @@ TOOLS
 */
 
 const generateBtn = document.getElementById("generate");
+const resetBtn = document.getElementById("reset");
+const ticketPreviewEl = document.getElementById("ticket_preview");
 
+// GENERATE FUNCTION
 generateBtn.addEventListener('click', function() {
   const km = Number(document.getElementById("km").value);
   const age = document.getElementById("age").value;
@@ -39,4 +42,16 @@ generateBtn.addEventListener('click', function() {
     default:
       console.log(`Prezzo maggiorenne: ${(Math.round(finalPrice * 100) / 100).toFixed(2)}€`);
   }
+
+  // SHOWS THE TICKET PREVIEW BY REMOVING BOOTSTRAP CLASS D-NONE
+  ticketPreviewEl.classList.remove("d-none");
+})
+
+
+// RESET FUNCTION
+resetBtn.addEventListener('click', function() {
+  ticketPreviewEl.classList.add("d-none");
+  document.getElementById("name_surname").value = "";
+  km.value = "";
+  age.value = "maggiorenne";
 })
